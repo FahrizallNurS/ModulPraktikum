@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dialog Sederhana dengan jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #overlay{
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+        #dialog{
+            background: white;
+            width: 300px;
+            padding: 20px;
+            margin: 100px auto;
+            position: relative;
+            z-index: 20;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #444;
+        }
+        #closeBtn{
+            margin-top: 15px;
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="openDialog">Buka Dialog</button>
+    <div id="overlay">
+        <div id="dialog">
+            <p>Ini adalah dialog sederhana dengan jQuery!</p>
+            <button id="closeBtn">Tutup</button>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('#openDialog').click(function(){
+                $('#overlay').fadeIn();
+            });
+
+            $('#closeBtn').click(function(){
+                $('#overlay').fadeOut();
+            });
+        });
+    </script>
+
+</body>
+</html>

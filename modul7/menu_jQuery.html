@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu dengan jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #menuList {
+            display: none;
+            list-style: none;
+            padding: 0;
+        }
+
+        #menuList li {
+            padding: 8px;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #menuList li:hover {
+            background-color: #ddd;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="toggleMenu">☰ Menu</button>
+
+    <ul id="menuList">
+        <li>Beranda</li>
+        <li>Profil</li>
+        <li>Kontak</li>
+        <li>Tentang</li>
+    </ul>
+
+    <script>
+        $(document).ready(function(){
+            $('#toggleMenu').click(function(){
+                $('#menuList').slideToggle(); 
+            });
+        });
+    </script>
+
+</body>
+</html>

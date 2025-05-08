@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waktu Real Time</title>
+</head>
+<body onload="startTime()">
+    <h2>Waktu Secara Real-time dengan JavaScript</h2>
+
+    <div id="txt"></div>
+    <script>
+        function startTime(){
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            let d = today.getDate();
+            let b = today.getMonth() +1;
+            let y = today.getFullYear();
+
+            m = checkTime(m);
+            s = checkTime(s);
+            d = checkTime(d);
+            b = checkTime(b);
+            document.getElementById('txt').innerHTML = d + "-" + b + "-" + y + " " + h + ":" + m + ":" + s;
+            setTimeout(startTime, 1000);
+        }
+
+        function checkTime(i){
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+</body>
+</html>
